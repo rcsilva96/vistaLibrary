@@ -10,4 +10,5 @@ import { RouterOutlet, RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'vistaLibrary';
+  //renato = 'Renato Carvalho Silva';
 }
