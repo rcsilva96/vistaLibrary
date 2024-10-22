@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Book } from '../../Book';
 
+
 @Component({
   selector: 'app-books',
   standalone: true,

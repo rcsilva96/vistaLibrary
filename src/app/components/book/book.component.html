@@ -1,23 +1,52 @@
-<div class="row text-center">
+<div class="container">
+    <h3>Cadastro</h3>
 
-    <div class="col">
-        {{book.id}}
-    </div>
+    <form>
 
-    <div class="col">
-        {{book.title}}
-    </div>
+        <div class="row">
+            
+            <label for="title" class="col-form-lable">Título</label>
 
-    <div class="col">
-        {{book.author | uppercase}}
-    </div>
+            <div>
 
-    <div class="col">
-        {{book.price}}
-    </div>
+                <input type="text" class="form-control" [(ngModel)]="book.title" name="title" required>
 
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+            <label for="author" class="col-form-lable">Autor: </label>
+
+            <div>
+
+                <input type="text" class="form-control" [(ngModel)]="book.author" name="author" required>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+            <label for="price" class="col-form-lable">Preço: </label>
+
+            <div>
+
+                <input type="text" class="form-control" [(ngModel)]="book.price" name="price" required>
+
+            </div>
+
+        </div>
+
+        <div class="row mt-3">
+            
+            <button class="btn btn-primary">Salvar</button>
+
+        </div>
+
+    </form>
 </div>
-
 
 
 
