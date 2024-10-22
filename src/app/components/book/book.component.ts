@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { Book } from '../../Book';
 import { FormsModule } from '@angular/forms'
@@ -15,11 +15,7 @@ import { FormsModule } from '@angular/forms'
 
 export class BookComponent {
 
-  book : Book = {
-    id: 1,
-    title: "Uma busca implacável: Celso Russomano busca justiça!",
-    author: "Renato Carvalho Silva",
-    price: 88.80
-  }
+  @Input()
+  book : Book = {} as Book;
 
 }
