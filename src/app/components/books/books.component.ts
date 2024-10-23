@@ -42,4 +42,12 @@ export class BooksComponent {
     }
   ]
 
+  saveBook(){
+
+    this.newBook.id = this.books.length + 1;
+    this.books.push(this.newBook);
+    this.newBook = {} as Book;
+
+  }
+
 }
