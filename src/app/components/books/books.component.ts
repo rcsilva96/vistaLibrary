@@ -14,6 +14,8 @@ import { BookComponent } from '../book/book.component';
 export class BooksComponent {
 
   book : Book = {} as Book;
+  isUpdate: boolean = false;
+  idCount : number = 5;
 
   books: Book[] = [
     {
@@ -44,36 +46,28 @@ export class BooksComponent {
 
   saveBook(){
 
-    if (this.book.id) {
-
-      const index = this.books.findIndex(b => b.id === this.book.id);
-
-      if (index !== -1) {
-
-        this.books[index] = this.book;
-      }
-
-    } else {
-
-      this.book.id = this.books.length + 1;
+    if(!this.isUpdate){
+      this.book.id = this.idCount;
+      this.idCount++;
       this.books.push(this.book);
-
     }
 
     this.book = {} as Book;
+    this.isUpdate = false;
 
   }
 
   alteraLivro(selectedBook: Book){
     
     this.book = selectedBook;
+    this.isUpdate = true;
 
   }
 
   deletaLivro(removeBook: Book){
     
     this.books = this.books.filter(b => b !== removeBook);
-    
+
 
   }
 
