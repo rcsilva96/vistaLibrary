@@ -13,7 +13,7 @@ import { BookComponent } from '../book/book.component';
 })
 export class BooksComponent {
 
-  newBook : Book = {} as Book;
+  book : Book = {} as Book;
 
   books: Book[] = [
     {
@@ -44,9 +44,36 @@ export class BooksComponent {
 
   saveBook(){
 
-    this.newBook.id = this.books.length + 1;
-    this.books.push(this.newBook);
-    this.newBook = {} as Book;
+    if (this.book.id) {
+
+      const index = this.books.findIndex(b => b.id === this.book.id);
+
+      if (index !== -1) {
+
+        this.books[index] = this.book;
+      }
+
+    } else {
+
+      this.book.id = this.books.length + 1;
+      this.books.push(this.book);
+
+    }
+
+    this.book = {} as Book;
+
+  }
+
+  alteraLivro(selectedBook: Book){
+    
+    this.book = selectedBook;
+
+  }
+
+  deletaLivro(removeBook: Book){
+    
+    this.books = this.books.filter(b => b !== removeBook);
+    
 
   }
 
